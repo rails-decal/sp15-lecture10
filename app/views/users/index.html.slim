@@ -2,4 +2,4 @@ h1 Users
 
 - @users.each do |user|
   h2 = link_to user.name, user
-  h4 Has 0 quits
+  h4 Has #{pluralize user.quits.count, "quit"}
