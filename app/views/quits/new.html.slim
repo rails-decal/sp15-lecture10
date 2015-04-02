@@ -1,0 +1,5 @@
+h1 Creating Quit for #{@user.name}
+
+= simple_form_for [@user, @quit] do |f|
+  = f.input :text
+  = f.button :submit

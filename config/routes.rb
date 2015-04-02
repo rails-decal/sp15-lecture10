@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: [:index, :show] do
-    resources :quits, only: [:edit, :update], shallow: true
+    resources :quits, only: [:new, :create, :edit, :update], shallow: true
   end
 end

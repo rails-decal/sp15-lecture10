@@ -1,4 +1,4 @@
-h1 = @user.name
+h1 #{@user.name} #{link_to "+", new_user_quit_path(@user)}
 h3 Quits
 
 - @user.quits.each do |quit|
