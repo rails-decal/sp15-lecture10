@@ -11,6 +11,7 @@
 #  reset_password_token   :string(255)
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
+#  admin                  :boolean
 #
 
 class User < ActiveRecord::Base

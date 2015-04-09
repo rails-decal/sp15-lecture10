@@ -8,7 +8,7 @@ class Ability
     else
       can :read, :all
     end
-    alias_action :create, :read, :update, :destroy, to: :crud
+    alias_action :create, :update, :destroy, to: :crud
     can :crud, Quit, user_id: user.id
   end
 end
