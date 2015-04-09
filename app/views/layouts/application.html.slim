@@ -10,5 +10,11 @@ html
       .header
         ul.nav.nav-pills.pull-right
           li = link_to "Home", root_path
+          - if user_signed_in?
+            li = link_to current_user.name, user_path(current_user)
+            li = link_to "Logout", destroy_user_session_path, method: :delete
+          - else
+            li = link_to "Sign In", new_user_session_path
+            li = link_to "Sign Up", new_user_registration_path
         h3.text-muted Week 8 Lecture
       = yield
