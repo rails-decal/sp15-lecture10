@@ -11,10 +11,12 @@
 #  reset_password_token   :string(255)
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
-#  admin                  :boolean
+#  role                   :integer          default(0)
 #
 
 class User < ActiveRecord::Base
+  enum role: [ :user, :admin, :moderator ]
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
