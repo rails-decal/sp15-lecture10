@@ -6,3 +6,8 @@ h3 Quits
     h4 = link_to quit.text, edit_quit_path(quit)
   - else
     h4 = quit.text
+
+h3
+  | Who I follow
+  - @user.followed_users.each do |user|
+    h4 = link_to user.name, user_path(user)
