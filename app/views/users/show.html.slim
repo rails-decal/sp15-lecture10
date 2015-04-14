@@ -1,4 +1,10 @@
 h1 #{@user.name} #{link_to "+", new_user_quit_path(@user)}
+- if @follow
+  h4 = link_to "Unfollow", follow_path(@follow), method: :delete
+- elsif current_user != @user
+  h4 = link_to "Follow", follows_path(user_id: @user.id), method: :post
+
+
 h3 Quits
 
 - @user.quits.each do |quit|
