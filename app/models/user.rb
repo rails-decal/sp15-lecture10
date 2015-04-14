@@ -15,7 +15,7 @@
 #
 
 class User < ActiveRecord::Base
-  enum role: [ :user, :admin, :moderator ]
+  enum role: [ :user, :admin, :moderator ] # Converts role to string for helpers.
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

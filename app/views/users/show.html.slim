@@ -2,4 +2,7 @@ h1 #{@user.name} #{link_to "+", new_user_quit_path(@user)}
 h3 Quits
 
 - @user.quits.each do |quit|
-  h4 = link_to quit.text, edit_quit_path(quit)
+  - if can? :update, quit
+    h4 = link_to quit.text, edit_quit_path(quit)
+  - else
+    h4 = quit.text
