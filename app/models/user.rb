@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
 
   has_many :quits
+  # The id of the user matches the follower_id column on the follows table
+  has_many :follows, foreign_key: :follower_id
+  # The users that are returned by having the method followed mapped onto the follows.
+  has_many :followed_users, through: :follows, source: :followed
 
   validates :name, presence: true
 end
