@@ -27,6 +27,8 @@ class User < ActiveRecord::Base
   has_many :follows, foreign_key: :follower_id
   # The users that are returned by having the method followed mapped onto the follows.
   has_many :followed_users, through: :follows, source: :followed
+  # The quits that are posted by the the people this user follows
+  has_many :followed_users_quits, through: :followed_users, source: :quits
 
   validates :name, presence: true
 end
